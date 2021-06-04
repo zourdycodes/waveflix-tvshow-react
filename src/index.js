@@ -6,10 +6,13 @@ import reportWebVitals from "./reportWebVitals";
 
 // state
 import ShowState from "../src/contexts/shows/ShowState";
+import AlertState from "../src/contexts/alerts/AlertState";
 
 ReactDOM.render(
   <ShowState>
-    <App />
+    <AlertState>
+      <App />
+    </AlertState>
   </ShowState>,
   document.getElementById("root")
 );

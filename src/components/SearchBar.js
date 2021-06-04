@@ -1,21 +1,29 @@
 import { useState, useContext } from "react";
 import Alert from "./Alert";
 import ShowsContext from "../contexts/shows/showContext";
+import AlertsContext from "../contexts/alerts/alertContext";
 
 const SearchBar = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const { searchShows } = useContext(ShowsContext);
 
+  const { alert, setAlert } = useContext(AlertsContext);
+
   const onSearchHandler = (e) => {
     e.preventDefault();
 
-    // console.log(`Searching for term: ${searchTerm}`);
-    searchShows(searchTerm);
+    // checking for the Alert
+    if (searchTerm === "") {
+      setAlert("Please write something!", "danger");
+    } else {
+      // console.log(`Searching for term: ${searchTerm}`);
+      searchShows(searchTerm);
+    }
   };
 
   return (
     <div className="searchBar">
-      <Alert message="Please type something!" type={"danger"} />
+      {alert ? <Alert message={alert.message} type={alert.type} /> : null}
       <form className="searchBar__form">
         <input
           type="text"

@@ -66,6 +66,12 @@ img {
   height: 295px;
   object-fit: cover;
 }
+.loader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 5rem;
+}
 
 /* NAVBAR STYLING */
 
@@ -184,10 +190,56 @@ img {
   /* text-decoration: none; */
 }
 
+/* DETAILS PAGE */
+
+.detailsPage {
+  display: flex;
+  gap: 1rem;
+  margin: 1.5rem;
+}
+
+.margin:not(:last-child) {
+  margin-bottom: 1.5rem;
+}
+
+.detailsPage__genre {
+  padding: 0.5rem;
+  margin-right: 0.5rem;
+  background: var(--secondary-color);
+  color: var(--white-color);
+  border-radius: 5px;
+}
+
+.detailsPage__status {
+  margin-top: 3rem;
+}
+
+.title__desc {
+  margin-bottom: 1rem;
+  color: var(--secondary-color);
+}
+
+.description {
+  line-height: 2;
+}
+
 @media (max-width: 600px) {
   .list {
     grid-template-columns: repeat(2, minmax(100px, 1fr));
     margin-left: 1.95rem;
+  }
+
+  .detailsPage {
+    display: block;
+  }
+
+  .detailsPage__image {
+    width: 100%;
+    height: 450px;
+  }
+
+  .detailsPage__genre {
+    display: flex;
   }
 }
 
@@ -207,6 +259,14 @@ img {
   img {
     width: 140px;
     height: 200px;
+  }
+
+  .nav__brand > a {
+    font-size: 1.2rem;
+  }
+
+  .links__link > a {
+    font-size: 0.95rem;
   }
 }
 
