@@ -1,5 +1,6 @@
 import { useEffect, useContext } from "react";
 import ShowsContext from "../contexts/shows/showContext";
+import Loader from "../components/Loader";
 
 const Detailspage = ({ match }) => {
   const { getSingleShow, singleShow, loading } = useContext(ShowsContext);
@@ -24,7 +25,7 @@ const Detailspage = ({ match }) => {
   return (
     <>
       {loading ? (
-        <h2>Loading...</h2>
+        <Loader />
       ) : (
         <div className="detailsPage">
           <img

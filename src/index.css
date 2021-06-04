@@ -223,6 +223,23 @@ img {
   line-height: 2;
 }
 
+/* About Page */
+.aboutPage__title {
+  text-align: center;
+  margin: 3rem;
+  color: var(--secondary-color);
+}
+
+.aboutPage__desc {
+  line-height: 2;
+  padding: 1rem 5rem;
+}
+
+.aboutPage__desc-02 {
+  line-height: 2;
+  padding: 1rem 5rem;
+}
+
 @media (max-width: 600px) {
   .list {
     grid-template-columns: repeat(2, minmax(100px, 1fr));
@@ -240,6 +257,13 @@ img {
 
   .detailsPage__genre {
     display: flex;
+  }
+  .aboutPage__desc {
+    padding: 1rem 1rem;
+  }
+
+  .aboutPage__desc-02 {
+    padding: 1rem 1rem;
   }
 }
 
