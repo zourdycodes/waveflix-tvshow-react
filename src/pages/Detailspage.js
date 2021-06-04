@@ -57,9 +57,7 @@ const Detailspage = ({ match }) => {
             <p className="detailsPage__website margin">
               <strong>🚀Official Site: </strong>{" "}
               {singleShow.officialSite ? (
-                <a target="_blank" href={singleShow.officialSite}>
-                  {singleShow.name}
-                </a>
+                <a href={singleShow.officialSite}>{singleShow.name}</a>
               ) : (
                 "🤷‍♀️ No Official Site"
               )}
