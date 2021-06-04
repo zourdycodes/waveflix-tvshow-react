@@ -40,7 +40,7 @@ const ShowState = (props) => {
       type: SET_LOADING,
     });
 
-    const { data } = await axios.get(`http://api.tvmaze.com/shows/${id}`);
+    const { data } = await axios.get(`https://api.tvmaze.com/shows/${id}`);
 
     console.log(data);
 
