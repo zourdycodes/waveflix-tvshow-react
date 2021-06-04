@@ -1,6 +1,7 @@
 import SearchBar from "../components/SearchBar";
 import { useContext } from "react";
 import ShowsContext from "../contexts/shows/showContext";
+import ListItem from "../components/ListItem";
 
 const Homepage = () => {
   const showsContext = useContext(ShowsContext);
@@ -12,9 +13,23 @@ const Homepage = () => {
       {loading ? (
         <h2>Loading...</h2>
       ) : (
-        <div>
+        <div className="list">
           {shows.map((item) => (
-            <h3>{item.show.name}</h3>
+            <ListItem
+              key={item.show.id}
+              image={
+                item.show.image
+                  ? item.show.image.medium
+                  : "https://www.publicdomainpictures.net/pictures/280000/velka/not-found-image-15383864787lu.jpg"
+              }
+              name={item.show.name}
+              rating={
+                item.show.rating.average
+                  ? item.show.rating.average
+                  : "No rating"
+              }
+              id={item.show.id}
+            />
           ))}
         </div>
       )}
